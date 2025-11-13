@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> About Jesus Page </title>
+    <meta name="description" content="Page describing the professional background and preferences of Jesus Azpitarte ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./assets/images/favicon_io/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/about-me.css">
+  </head>
+
+  <body>
+    <noscript>
+      <p> This website requires javascript enabled for full functionality. </p>
+    </noscript>
+
+    <header>
+      <nav>
+        <svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+        </svg>
+
+        <nav-links>
+          <a href="index.html"> Home </a>
+          <a href="about.html"> About Me </a>
+          <a href="portfolio.html"> Portfolio </a>
+          <a href="contact.html"> Contact </a>
+        </nav-links>
+
+        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
+          Settings 
+        </button>
+
+        <dialog id="settings-dialog">
+          <settings-content>
+            <span> <input type="checkbox" id="dark-mode"> <label> Dark Mode </label> </span>
+            <button command="close" commandfor="settings-dialog"> Close Settings </button>  
+          </settings-content>
+        </dialog>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="hamburger"> &#9776; </label>
+
+        <aside id="side-nav">
+          <label for="menu-toggle" id="close">&#10005;</label>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
+
+    <main>
+      <article id="about-me">
+        
+        <section id="professional-snapshot">
+          <h1> About Me </h1>
+          <picture id="portrait-square">
+            <source type="image/webp" 
+                    srcset="./assets/images/portrait-square/portrait-square-400.webp 400w, 
+                            ./assets/images/portrait-square/portrait-square-800.webp 800w, 
+                            ./assets/images/portrait-square/portrait-square-1200.webp 1200w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+            <source type="image/jpeg" 
+                    srcset="./assets/images/portrait-square/portrait-square-400.jpg 400w, 
+                            ./assets/images/portrait-square/portrait-square-800.jpg 800w, 
+                            ./assets/images/portrait-square/portrait-square-1200.jpg 1200w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+            <img src="./assets/images/portrait-square/portrait-square-800.jpg" 
+                alt="Professional portrait of Jesus Azpitarte smiling on the La Jolla Shores Boardwalk." 
+                class="raised" style="width:100%;height:auto;" loading="lazy">
+          </picture>
+
+          <p> I am a computer programmer with a strong background in visual design and art who's passionate for learning. I love using my programming skills and artistic abilities for good and meaningful projects.</p>
+          <h2> Technical Background </h2>
+          <p> I have the most technical experience in web development. I have been a designer and developer in various projects. <br> <strong> Check them out:</strong> </p> <br>
+          <a href="./portfolio.html"> <button> View Projects</button> </a>
+
+          <h3> Tools </h3>
+          <tool-list>
+            <ul> 
+              <h4> Web Programming</h4>
+              <li> HTML </li>
+              <li> CSS </li>
+              <li> JavaScript </li>
+              <li> TypesScript </li>
+              <li> Mongo </li>
+              <li> Express </li>
+              <li> React </li>
+              <li> Node </li>
+            </ul>
+
+            <ul>
+              <h4> Miscellaneous</h4>
+              <li> Figma </li>
+              <li> Python </li>
+              <li> Krita </li>
+              <li> OpenGL</li>
+              <li> Qiskit </li>
+            </ul>
+          </tool-list>
+        </section>
+
+        <section id="personal-interests">
+          <h2> Personal Interests </h2>
+          <h3> Guitar </h3>
+          <p> I love strumming and noodling around on my electric and acoustic guitar! I listen to alternative rock and french house. </p>
+          <p> Listen to this rock demo I made: </p>
+
+          <audio controls>
+            <source src="./assets/audio/asymptote.mp3" type="audio/mpeg"> 
+            <source src="./assets/audio/asymptote.wav" type="audio/wav"> 
+            Your browser does not support the audio element.
+          </audio>
+
+          <h4> Track Art Cover </h4>
+          <figure id="baldomero">
+          <picture>
+            <source type="image/webp"
+                    srcset="./assets/images/baldomero/baldomero-400.webp 400w,
+                            ./assets/images/baldomero/baldomero-800.webp 800w,
+                            ./assets/images/baldomero/baldomero-1200.webp 1200w"
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+            <source type="image/jpeg"
+                    srcset="./assets/images/baldomero/baldomero-400.jpg 400w,
+                            ./assets/images/baldomero/baldomero-800.jpg 800w,
+                            ./assets/images/baldomero/baldomero-1200.jpg 1200w"
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+            <img src="./assets/images/baldomero/baldomero-800.jpg"
+                alt="Empty hand reaching out on top of a colorles ocean with text saying: The Azymptote Reaches Zero"
+                loading="lazy" style="width:100%;height:auto;">
+          </picture>
+          <figcaption>
+            <p>Hypothetical album cover for the rock demo titled &quot;Asymptote&quot; </p>
+            <p> By Jesus Azpitarte </p>
+          </figcaption>
+        </figure>
+ 
+
+          <h3> Art </h3>
+          <p> My favorite hobby includes drawing and all sorts of two-dimensional art!  Here's a piece I'm really proud of:</p>
+          <figure id="art-anger">
+          <picture>
+            <source type="image/webp"
+                    srcset="./assets/images/art/anger/anger-400.webp 400w,
+                            ./assets/images/art/anger/anger-800.webp 800w,
+                            ./assets/images/art/anger/anger-1200.webp 1200w"
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+            <source type="image/jpeg"
+                    srcset="./assets/images/art/anger/anger-400.jpg 400w,
+                            ./assets/images/art/anger/anger-800.jpg 800w,
+                            ./assets/images/art/anger/anger-1200.jpg 1200w"
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+            <img src="./assets/images/art/anger/anger-800.jpg"
+                alt="Greyscale digital drawing of a ferocious dragon "
+                loading="lazy" style="width:100%;height:auto;">
+          </picture>
+          <figcaption>
+            <p> Anger </p>
+            <p> By Jesus Azpitarte </p>
+
+          </figcaption>
+        </figure>
+        </section>
+      </article>
+    </main>
+
+    <hr> 
+    <footer>
+      <small> &copy; 2025 Jesus Azpitarte. Licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
+          CC&nbsp;BY-NC-ND&nbsp;4.0
+        </a>. Viewing only.
+      </small>
+    </footer>
+  </body>
+</html>
+
+

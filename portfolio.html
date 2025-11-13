@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Jesus' Portfolio </title>
+    <meta name="description" content="Page showcasing the various computer science projects of Jesus Azpitarte. ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/images/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/portfolio.css">
+  </head>
+  <body>
+    <noscript>
+      <p> This website requires javascript enabled for full functionality. </p>
+    </noscript>
+
+    <header>
+      <nav>
+        <svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+        </svg>
+
+        <nav-links>
+          <a href="index.html"> Home </a>
+          <a href="about.html"> About Me </a>
+          <a href="portfolio.html"> Portfolio </a>
+          <a href="contact.html"> Contact </a>
+        </nav-links>
+
+        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
+          Settings 
+        </button>
+
+        <dialog id="settings-dialog">
+          <settings-content>
+            <span> <input type="checkbox" id="dark-mode"> <label> Dark Mode </label> </span>
+            <button command="close" commandfor="settings-dialog"> Close Settings </button>  
+          </settings-content>
+        </dialog>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="hamburger"> &#9776; </label>
+
+        <aside id="side-nav">
+          <label for="menu-toggle" id="close">&#10005;</label>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
+
+    <main>
+      
+    <article id="portfolio-page">
+      <h1> My Projects </h1>
+      <img id ="man-svg"src="./assets/svg/undraw_working-at-home_pxaa_themed.svg" width=50%>  
+      <p> This is an in-depth showcase of my computer science projects. </p>
+
+      <project-snapshot id="quantum">
+        <h2 > Quantum Computing Research </h2>
+        <h3> Description </h3>
+        <p> Collaborated with professors, graduate students, and a team of undergraduates to implement and analyze the performance of a quantum algorithm's novel classical implementation. </p>
+        <h3> Role </h3>
+        <p> Developed brute-force/spoofing algorithm for the project and conducted data analysis on the performance of the algorithms on different statistical comparison benchmarks. </p>
+
+        <ul class="tech-list"> 
+          <h3> Tech Utilized </h3>
+          <li> Python </li>
+          <li> MatPlotLib </li>
+          <li> Qiskit </li>
+          <li> Jupyter Notebook </li>
+        </ul>
+
+        <ol class="challenges">
+          <h3>Challenges</h3>
+          <li>  
+            <h4> Developing <abbr>RCS</abbr> (Random Circuit Samping) Simulation </h4>
+            <p> I was tasked with implementing the brute force <abbr> RCS </abbr> algorithm using two different quantum circuit structures. This means I had to implement the model for a literature-standard practice of gatheing random samples of a circuit in quantum computing. The lack of relavent implementations of the algorithm made implementation difficult. Tools like LLMs had limited utility as the subject matter was so niche. Despite these hurdles, I was able to dig through multiple research papers that describe the algorithm through different circuit architectures. </p>
+
+            <figure id="brickwork-2d-rcs">
+              <picture>
+                <source type="image/webp"
+                        srcset="./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-400.webp 400w,
+                                ./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-800.webp 800w,
+                                ./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-1200.webp 1200w"
+                        sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+                <source type="image/jpeg"
+                        srcset="./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-400.jpg 400w,
+                                ./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-800.jpg 800w,
+                                ./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-1200.jpg 1200w"
+                        sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+                <img src="./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-800.jpg"
+                    alt="Two-dimensional brickwork architecture implemented by Jesus Azpitarte."
+                    style="width:100%;height:auto;" loading="lazy">
+              </picture>
+
+              <figcaption>
+                <p> Diagram of two-dimensional brickwork architecture used in random circuit sampling. This was implemented in Python by Jesus Azpitarte. </p>
+                <p> <strong> Photo Credit: </strong> <cite>He-Liang Huang, Youwei Zhao, Chu Guo. How to Design a Classically Difficult Random Quantum Circuit for Quantum Computational Advantage Experiments. <em>Intell Comput.</em> 2024;3:0079. DOI:10.34133/icomputing.0079</cite> </p>
+              </figcaption>
+            </figure>
+
+          </li>
+          <li>  
+            <h4> RCS Data Analysis </h4>
+            <p> Since we were using my implementation of brute force <abbr> RCS </abbr> to compare against the team's novel implementation, we also needed a system for analyzing and comparing the results of our computations. I implemented a data analysis notebook which allowed us to measure our brute force computations on different parameters. Parameters like circuit size, shape, and error rate. The challenging parts were organizing the information to enable efficient computation and evaluation. </p>
+            <p> Given the number of parameter combinations, this was a challenge. Only by analyzing the data's inherent structure and maintaining consistent file architecture was I able to showcase our findings. </p>
+            <figure id="tvd-over-varying-truncation">
+            <picture>
+              <source type="image/webp"
+                      srcset="./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-400.webp 400w,
+                              ./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-800.webp 800w,
+                              ./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-1200.webp 1200w"
+                      sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+              <source type="image/jpeg"
+                      srcset="./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-400.jpg 400w,
+                              ./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-800.jpg 800w,
+                              ./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-1200.jpg 1200w"
+                      sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+              <img src="./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-800.jpg"
+                  alt="Graph representing the relationship of truncation total variation distance over truncation"
+                  loading="lazy" style="width:100%;height:auto;">
+            </picture>
+            <figcaption>
+              <p> Graph showcasing a negative relationship between statistical comparison benchmark 
+              <abbr title="Total Variation Distance">TVD</abbr> over a truncation range of 7–12. </p> 
+              <p> Graph data was constructed and analyzed by Jesus Azpitarte using Python. </p>
+            </figcaption>
+          </figure>
+
+          </li>
+          <li>  
+            <h4> Working in a Team</h4>
+            <p> For this research project, everyone was assigned to a different section of the program. This made it difficult to deal with the inputs and outputs of everyone's code. Documentation and communication was pivotal to account for that chasm. I learned that starting early with documentation is essential for maintaining project longevity.</p>
+            <p> Before this project, I was mostly a solitary worker but being in such a reliable and helpful team absolutely blasted me out of my shell. When people rely on me in a team base enviornment, it pushes me to acheive my goals and ensure quality is maintained. </p>
+
+            <figure id="conference-poster">
+              <picture>
+                <source type="image/webp"
+                        srcset="./assets/images/conference-poster/conference-poster-400.webp 400w,
+                                ./assets/images/conference-poster/conference-poster-800.webp 800w,
+                                ./assets/images/conference-poster/conference-poster-1200.webp 1200w"
+                        sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+                <source type="image/jpeg"
+                        srcset="./assets/images/conference-poster/conference-poster-400.jpg 400w,
+                                ./assets/images/conference-poster/conference-poster-800.jpg 800w,
+                                ./assets/images/conference-poster/conference-poster-1200.jpg 1200w"
+                        sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
+                <img src="./assets/images/conference-poster/conference-poster-800.jpg"
+                    alt="Group portrait of Jesus Azpitarte with fellow undergraduate researchers standing in front of their quantum computing conference poster."
+                    loading="lazy" style="width:100%;height:auto;">
+              </picture>
+
+              <figcaption>
+                <p>
+                  Group photo of all Jesus&#39; research mates at 
+                  <abbr>ERSP</abbr> (Early Research Scholars Program) &#39;s annual research symposium.
+                </p>
+              </figcaption>
+            </figure>
+          
+          </li>
+          <li>  
+            <h4> Literature Review</h4>
+            <p> Although I had a previous interest in skimming the Quantum Physics side of Youtube, I had absolutely no experience with the vastly mathematical field of Quantum Computing. To obtain even a franction of understanding, I conducted a literature review surrounding the Random Circuit Sampling topic. It was common for me to stumble on every other word in an article's sentence, but the effort was well worth it. Ensuring the literature I consumed intersected with my research question saved me lots of time and effort. </p>
+          </li>
+        </ol>
+      </project-snapshot>
+    </article>
+
+    </main>
+     
+    <hr> 
+    <footer>
+      <small> &copy; 2025 Jesus Azpitarte. Licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
+          CC&nbsp;BY-NC-ND&nbsp;4.0
+        </a>. Viewing only.
+      </small>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Jesus Portfolio Home </title>
+    <meta name="description" content="Home page of Jesus Azpitarte's CS Portfolio Site. ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./assets/images/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+  </head>
+
+  <body>
+    <noscript>
+      <p> This website requires javascript enabled for full functionality. </p>
+    </noscript>
+
+    <header>
+      <nav>
+        <svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+        </svg>
+
+        <nav-links>
+          <a href="index.html"> Home </a>
+          <a href="about.html"> About Me </a>
+          <a href="portfolio.html"> Portfolio </a>
+          <a href="contact.html"> Contact </a>
+        </nav-links>
+
+        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
+          Settings 
+        </button>
+
+        <dialog id="settings-dialog">
+          <settings-content>
+            <span> <input type="checkbox" id="dark-mode"> <label> Dark Mode </label> </span>
+            <button command="close" commandfor="settings-dialog"> Close Settings </button>  
+          </settings-content>
+        </dialog>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="hamburger"> &#9776; </label>
+
+        <aside id="side-nav">
+          <label for="menu-toggle" id="close">&#10005;</label>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
+
+    <main>
+      <article id="home">
+        <hero-section>
+          <hero-blurb>
+            <span> Yo, I'm </span>
+            <span> Jesus Azpitarte. </span>
+            <span> Software | Quality </span>
+            <span> Engineer. </span>
+            <br>
+
+            <div>
+              <a href="./portfolio.html"> <button> View Projects</button> </a>
+              <button class="secondary-button"> Download Resume </button>
+            </div>
+          </hero-blurb>
+
+          <orbit-glow> </orbit-glow>
+        </hero-section>
+      </article>
+    </main>
+    
+    <hr> 
+    <footer>
+      <small> &copy; 2025 Jesus Azpitarte. Licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
+          CC&nbsp;BY-NC-ND&nbsp;4.0
+        </a>. Viewing only.
+      </small>
+    </footer>
+  </body>
+</html>
+
+<!-- 
+CSS Related Feature:
+I used animating entry effects.
+Found here on web.dev website: https://web.dev/blog/baseline-entry-animations?hl=en
+
+Explanation: It provides a way to apply animations on elements that are initially
+on "display: none". Before, the elements would just pop into existence.
+
+Implementation: I used it in the settings dialog box. It pops in the animation from
+the bottom. Ironically, there is no clean feature to animate into something that is display none.
+-->

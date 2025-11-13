@@ -1,0 +1,19 @@
+{
+  "name": "azpi-cs-portfolio",
+  "version": "1.0.0",
+  "description": "Jesus Azpitarte's cs portfolio",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azpi-arte/CSE134-HW-2.git"
+  },
+  "author": "Jesus Azpitarte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azpi-arte/CSE134-HW-2/issues"
+  },
+  "homepage": "https://github.com/azpi-arte/CSE134-HW-2#readme"
+}

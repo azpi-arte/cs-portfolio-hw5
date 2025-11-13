@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Jesus' Portfolio </title>
+    <meta name="description" content="CS Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/images/favicon_io/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <noscript>
+      <p> This website requires javascript enabled for full functionality. </p>
+    </noscript>
+
+    <header>
+      <nav>
+        <a href="index.html"> Home </a>
+        <a href="about.html"> About Me </a>
+        <a href="portfolio.html"> Portfolio </a>
+        <a href="contact.html"> Contact </a>
+        
+        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
+          Settings 
+        </button>
+        <dialog id="settings-dialog" >
+          <button command="close" commandfor="settings-dialog"> Close Settings </button>
+          <label> Dark Mode: </label>
+          <input type="checkbox" id="dark-mode">
+        </dialog>
+      </nav>
+    </header>
+     
+    <article id="cs-project">
+      <cs-project-showcase>
+        <h1> Project Title </h1>
+        <section id="project-intro">
+          <div>
+            <p> <b>Project description: </b>  Lorem ipsum dolor sit amet,adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              enim ad minim veniam, quis nostrud laboris nisi ut  aliquip ex ea 
+              commodo consequat. Duis aute irure dolor in reprehenderit 
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum.
+            </p>
+  
+            <br>
+    
+            <p> <b>Role: </b>  Lorem ipsum dolor sit amet,adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              enim ad minim veniam, quis nostrud laboris nisi ut  aliquip ex ea 
+              commodo consequat. Duis aute irure dolor in reprehenderit 
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum.
+            </p>
+          </div>
+  
+          <figure>
+            <picture>
+              <source srcset="/assets/images/research-large.webp">
+              <img src="/assets/images/research-large.jpg" alt="jesus with presenting his quantum research photo with his peers">
+            </picture>
+  
+            <figcaption>
+              a caption for this image.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section id="problems-solutions">
+          <h2> Problems/Solutions </h2>
+          
+          <article>
+            <p> <b> Problem: </b> Lorem ipsum dolor sit amet,adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              enim ad minim veniam, quis nostrud laboris nisi ut  aliquip ex ea 
+              commodo consequat. Duis aute irure dolor in reprehenderit 
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum. 
+            </p>
+
+            <p> <b> Solution: </b> Lorem ipsum dolor sit amet,adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              enim ad minim veniam, quis nostrud laboris nisi ut  aliquip ex ea 
+              commodo consequat. Duis aute irure dolor in reprehenderit 
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum. 
+            </p>
+          
+            <br>
+          </article>
+
+          
+          <article>
+            <p> <b> Problem: </b> Lorem ipsum dolor sit amet,adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              enim ad minim veniam, quis nostrud laboris nisi ut  aliquip ex ea 
+              commodo consequat. Duis aute irure dolor in reprehenderit 
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum. 
+            </p>
+
+            <p> <b> Solution: </b> Lorem ipsum dolor sit amet,adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              enim ad minim veniam, quis nostrud laboris nisi ut  aliquip ex ea 
+              commodo consequat. Duis aute irure dolor in reprehenderit 
+              in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+              sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+              mollit anim id est laborum. 
+            </p>
+          
+            <br>
+          </article>
+        </section>
+
+        <section id="demo-section">
+          <h2> Demo </h2>
+
+          <figure>
+            <video controls width="450" height="550">
+              <source src="/assets/videos/output.mp4" type="video/mp4">
+              Bro, go get a better browser fr. jk jk.
+            </video>
+
+            <figcaption> This is a demo caption </figcaption>
+          </figure>
+        </section>
+      </cs-project-showcase>
+    </article>
+  </body>
+</html>
