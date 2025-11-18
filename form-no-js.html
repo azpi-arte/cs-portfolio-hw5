@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>form no js</title>
+    <meta name="description" content="a form page meant for grading.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/form-no-js.css">
+  </head>
+  <body>
+    <main>
+      <form method="get" action="https://httpbin.org/" id="contact-form" >
+        <h1> Contact Me </h1>
+
+        <form-element>
+          <label for="name-input"> Your Name </label>
+          <input type="text" id="name-input" name="name-input" placeholder="ex. Maria Gonzalez" autofocus minlength="4" maxlength="70" autocomplete="name" required> 
+        </form-element>
+
+        <form-element>
+          <label for="email-input"> Email </label>
+          <input type="email" id="email-input" name="email-input" placeholder="ex. email@email.com" minlength="4" maxlength="254" autocomplete="email" required>
+        </form-element>
+
+        <form-element>
+          <label for="phone-input"> Phone Number </label>
+          <input type="tel" name="phone-input"  placeholder="ex. 555-555-5555" minlength="10" maxlength="12" autocomplete="tel-national"> </input>
+        </form-element>
+
+        <form-element>
+          <label for="comment-input"> Comments </label>
+          <textarea name="comment-input" autocorrect="on"  placeholder="Comments here." minlength="5" maxlength="5000" required> </textarea>
+        </form-element>
+
+        <output-area>
+          <output for="name-input, email-input, phone-input, comment-input" form="contact-form" id="error-output" name="error-output"> </output>
+          <output for="name-input, email-input, phone-input, comment-input" form="contact-form" id="info-output" name="info-output"> </output>
+        </output-area>
+
+        <input name="possible_bot" value="true" hidden="true"> 
+        <button type="submit" id="submit-contact-form"> Submit Form </button>
+      </form>
+    </main>
+  </body>
+</html>

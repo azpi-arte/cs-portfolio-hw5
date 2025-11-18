@@ -106,6 +106,10 @@
     src: url(../fonts/Varela/Varela-Regular.ttf) format('truetype')
   }
 
+  * {
+    font-family: "Varela", Arial, sans-serif;
+  }
+
   body {
     font-family: "Monsterrat", Arial, sans-serif;
     font-size: var(--step-0);
@@ -128,11 +132,11 @@
     border-top: 1px solid var(--hr-color);
     margin-bottom: 0px;
   }
-
   
   img {
     border-radius: var(--border-round-big);
   }
+
 }
 
 /* ---------- THEME ---------- */
@@ -146,6 +150,7 @@
     --background-tertiary: #c7e2ff;
     --text-color: #333333;
     --accent-color: #0056b3;
+    --error-color: #be0000;
     --hr-color: #97a5b4;
     --border-round-small: 5px;
     --border-round-med: 7px;

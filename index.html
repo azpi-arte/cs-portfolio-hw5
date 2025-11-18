@@ -13,10 +13,6 @@
   </head>
 
   <body>
-    <noscript>
-      <p> This website requires javascript enabled for full functionality. </p>
-    </noscript>
-
     <header>
       <nav>
         <svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -41,6 +37,11 @@
           <settings-content>
             <span> <input type="checkbox" id="dark-mode"> <label> Dark Mode </label> </span>
             <button command="close" commandfor="settings-dialog"> Close Settings </button>  
+            <noscript>
+              <p style="color: red; font-size: 0.9rem;">
+                Dark mode toggle will not be remembered because JavaScript is disabled.
+              </p>
+            </noscript>
           </settings-content>
         </dialog>
 
@@ -90,15 +91,3 @@
     </footer>
   </body>
 </html>
-
-<!-- 
-CSS Related Feature:
-I used animating entry effects.
-Found here on web.dev website: https://web.dev/blog/baseline-entry-animations?hl=en
-
-Explanation: It provides a way to apply animations on elements that are initially
-on "display: none". Before, the elements would just pop into existence.
-
-Implementation: I used it in the settings dialog box. It pops in the animation from
-the bottom. Ironically, there is no clean feature to animate into something that is display none.
--->

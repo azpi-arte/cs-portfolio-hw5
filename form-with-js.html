@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>form no js</title>
+    <meta name="description" content="a form page meant for grading.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/form-with-js.css">
+  </head>
+  <body>
+    <main>
+      <form method="get" action="https://httpbin.org/get" id="contact-form" >
+        <h1> Contact Me </h1>
+
+        <form-element>
+          <label for="name-input"> Full Name </label>
+          <input type="text" inputmode="latin-name" id="name-input" name="name-input" placeholder="ex. Maria Gonzalez" autofocus minlength="2" maxlength="70" autocomplete="name" pattern="^(?:[A-Z][a-z]+)(?:\s[A-Z][a-z]+)*$" required> 
+        </form-element>
+
+        <form-element>
+          <label for="email-input"> Email </label>
+          <input type="email" inputmode="email" id="email-input" name="email-input" placeholder="ex. email@email.com" minlength="4" maxlength="254" autocomplete="email" pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[A-Za-z]{2,}$" required>
+        </form-element>
+
+        <form-element>
+          <label for="phone-input"> Phone Number </label>
+          <input type="tel" inputmode="tel" id="phone-input" name="phone-input"  placeholder="ex. 555-555-5555" minlength="10" maxlength="12" autocomplete="tel-national" pattern="^(\+1\s?)?(\(\d{3}\)|\d{3})[\-.\s]?\d{3}[\-.\s]?\d{4}$"> </input>
+        </form-element>
+
+        <form-element>
+          <label for="comment-input"> Comments </label>
+          <textarea name="comment-input" inputmode="text" id="comment-input" autocorrect="on"  placeholder="Comments here." minlength="5" maxlength="2000" required> </textarea>
+        </form-element>
+
+        <output-area>
+          <output for="name-input, email-input, phone-input, comment-input" form="contact-form" id="info-output" name="info-output"> </output>
+          <output for="name-input, email-input, phone-input, comment-input" form="contact-form" id="error-output" name="error-output"> </output>
+        </output-area>
+
+        <input name="possible_bot" value="true" hidden="true"> 
+        <input name="form-errors" id="form-errors" hidden="true">
+        <button type="submit" form="contact-form" id="submit-contact-form"> Submit Form </button>
+      </form>
+    </main>
+
+    <script src="./assets/js/form-validation.js"> </script>
+  </body>
+</html>
