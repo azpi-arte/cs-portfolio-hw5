@@ -61,11 +61,11 @@
 
     <main>
       <article id="portfolio-page">
-        <h1> Computer Science Projects </h1>
+        <span> <h1> Computer Science Projects </h1> <button id="load-local"> Load Local </button> <button id="load-remote" class="secondary-button"> Load Remote </button></span> 
 
         <projects>
-          <project-card image="servicenow-logo">
-            <span slot="title">Servicenow Crypto CLI</span>
+          <project-card image="servicenow-logo" title="green Servicenow logo">
+            <span slot="title"> Crypto QE CLI</span>
             <span slot="description">Developed a JavaScript based CLI for automating cybersecurity quality engineering workflow.</span>
             <a slot="link" href="./projects/crypto-cli.html">Explore Project &rarr;</a>
           </project-card>
@@ -89,8 +89,8 @@
           </project-card>
 
           <project-card image="opengl">
-            <span slot="title"> Operating System Mutex</span>
-            <span slot="description"> Implemented and used software-based mutual exclusion in a prototype operating system. </span>
+            <span slot="title"> Parallel Convolution </span>
+            <span slot="description"> Used OpenGL to implement the convolution layer in a neural network. </span>
             <a slot="link" href="./projects/matrix-multiply.html">Explore Project &rarr;</a>
           </project-card>
 
@@ -108,14 +108,17 @@
           background-color: var(--background-color);
           border-radius: var(--border-round-small);
           border: 1px solid var(--accent-color);
-          width: clamp(300px, 30%, 400px);
+          width: clamp(250px, 20%, 400px);
           padding: var(--space-m) !important; 
           box-sizing: border-box;
           height: 100;
+          font-size: var(--step--1);
         }
 
         picture, img {
-          width: 100%;
+          width: 80%;
+          justify-self: center;
+          align-self: center;
           height: auto;
           aspect-ratio: 1;
           display: block;
@@ -125,6 +128,12 @@
         
         h2 {
           margin: 0;
+          font-size: var(--step--1);
+        }
+
+        a {
+          align-self: flex-end;
+          justify-self: flex-end;
         }
         ::slotted([slot="title"]) {
           font-size: var(--step-0);
@@ -136,16 +145,18 @@
         }
         ::slotted([slot="link"]) {
           color: var(--accent-color) !important;
+          place-self: end;
+          margin-top: auto !important;
         }
 
       </style>
 
       <picture id="picture">
-        <img id="image" src="../assets/svg/no-image-svgrepo-com.svg" alt="No image available">
+        <img id="image" src="./assets/svg/no-image-svgrepo-com.svg" alt="No image available">
       </picture>
       <h2><slot name="title">untitled</slot></h2>
       <p><b> Description: </b><slot name="description">description not found.</slot></p>
-      <slot name="link"><a id="readmore" href="#">Explore Project &rarr;</a></slot>
+      <slot name="link" ><a id="readmore" href="#">Explore Project &rarr;</a></slot>
     </template>
 
     <footer>
@@ -159,5 +170,7 @@
   </body>
   <script src="./components/project-card.js"> </script>
   <script src="./assets/js/main.js"> </script>
+  <script src="./components/project-card-populate.js" type="module"> </script>
+
 </html>
 
