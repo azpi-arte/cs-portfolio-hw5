@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/portfolio.css">
   </head>
+
   <body id="portfolio-body">
     <noscript>
       <p> This website requires javascript enabled for full functionality. </p>
@@ -59,127 +60,94 @@
     </header>
 
     <main>
-      
-    <article id="portfolio-page">
-      <h1> My Projects </h1>
-      <img id ="man-svg"src="./assets/svg/undraw_working-at-home_pxaa_themed.svg" width=50%>  
-      <p> This is an in-depth showcase of my computer science projects. </p>
+      <article id="portfolio-page">
+        <h1> Computer Science Projects </h1>
 
-      <project-snapshot id="quantum">
-        <h2 > Quantum Computing Research </h2>
-        <h3> Description </h3>
-        <p> Collaborated with professors, graduate students, and a team of undergraduates to implement and analyze the performance of a quantum algorithm's novel classical implementation. </p>
-        <h3> Role </h3>
-        <p> Developed brute-force/spoofing algorithm for the project and conducted data analysis on the performance of the algorithms on different statistical comparison benchmarks. </p>
+        <projects>
+          <project-card image="servicenow-logo">
+            <span slot="title">Servicenow Crypto CLI</span>
+            <span slot="description">Developed a JavaScript based CLI for automating cybersecurity quality engineering workflow.</span>
+            <a slot="link" href="./projects/crypto-cli.html">Explore Project &rarr;</a>
+          </project-card>
 
-        <ul class="tech-list"> 
-          <h3> Tech Utilized </h3>
-          <li> Python </li>
-          <li> MatPlotLib </li>
-          <li> Qiskit </li>
-          <li> Jupyter Notebook </li>
-        </ul>
+          <project-card image="sibling-layers">
+            <span slot="title">Quantum Research</span>
+            <span slot="description"> Created a classical spoofing algoritm for a quantum supremacy benchmark.</span>
+            <a slot="link" href="./projects/quantum-research.html">Explore Project &rarr;</a>
+          </project-card>
 
-        <ol class="challenges">
-          <h3>Challenges</h3>
-          <li>  
-            <h4> Developing <abbr>RCS</abbr> (Random Circuit Samping) Simulation </h4>
-            <p> I was tasked with implementing the brute force <abbr> RCS </abbr> algorithm using two different quantum circuit structures. This means I had to implement the model for a literature-standard practice of gatheing random samples of a circuit in quantum computing. The lack of relavent implementations of the algorithm made implementation difficult. Tools like LLMs had limited utility as the subject matter was so niche. Despite these hurdles, I was able to dig through multiple research papers that describe the algorithm through different circuit architectures. </p>
+          <project-card image="splagen-modal">
+            <span slot="title"> Splagen Website </span>
+            <span slot="description"> Frontend role for the nonprofit health resource directory Splagen. Agile based team and workflow. </span>
+            <a slot="link" href="./projects/splagen.html">Explore Project &rarr;</a>
+          </project-card>
 
-            <figure id="brickwork-2d-rcs">
-              <picture>
-                <source type="image/webp"
-                        srcset="./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-400.webp 400w,
-                                ./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-800.webp 800w,
-                                ./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-1200.webp 1200w"
-                        sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
-                <source type="image/jpeg"
-                        srcset="./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-400.jpg 400w,
-                                ./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-800.jpg 800w,
-                                ./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-1200.jpg 1200w"
-                        sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
-                <img src="./assets/images/brickwork-2d-rcs/brickwork-2d-rcs-800.jpg"
-                    alt="Two-dimensional brickwork architecture implemented by Jesus Azpitarte."
-                    style="width:100%;height:auto;" loading="lazy">
-              </picture>
+          <project-card image="os">
+            <span slot="title"> Operating System Mutex</span>
+            <span slot="description"> Implemented and used software-based mutual exclusion in a prototype operating system. </span>
+            <a slot="link" href="./projects/splagen.html">Explore Project &rarr;</a>
+          </project-card>
 
-              <figcaption>
-                <p> Diagram of two-dimensional brickwork architecture used in random circuit sampling. This was implemented in Python by Jesus Azpitarte. </p>
-                <p> <strong> Photo Credit: </strong> <cite>He-Liang Huang, Youwei Zhao, Chu Guo. How to Design a Classically Difficult Random Quantum Circuit for Quantum Computational Advantage Experiments. <em>Intell Comput.</em> 2024;3:0079. DOI:10.34133/icomputing.0079</cite> </p>
-              </figcaption>
-            </figure>
+          <project-card image="opengl">
+            <span slot="title"> Operating System Mutex</span>
+            <span slot="description"> Implemented and used software-based mutual exclusion in a prototype operating system. </span>
+            <a slot="link" href="./projects/matrix-multiply.html">Explore Project &rarr;</a>
+          </project-card>
 
-          </li>
-          <li>  
-            <h4> RCS Data Analysis </h4>
-            <p> Since we were using my implementation of brute force <abbr> RCS </abbr> to compare against the team's novel implementation, we also needed a system for analyzing and comparing the results of our computations. I implemented a data analysis notebook which allowed us to measure our brute force computations on different parameters. Parameters like circuit size, shape, and error rate. The challenging parts were organizing the information to enable efficient computation and evaluation. </p>
-            <p> Given the number of parameter combinations, this was a challenge. Only by analyzing the data's inherent structure and maintaining consistent file architecture was I able to showcase our findings. </p>
-            <figure id="tvd-over-varying-truncation">
-            <picture>
-              <source type="image/webp"
-                      srcset="./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-400.webp 400w,
-                              ./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-800.webp 800w,
-                              ./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-1200.webp 1200w"
-                      sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
-              <source type="image/jpeg"
-                      srcset="./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-400.jpg 400w,
-                              ./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-800.jpg 800w,
-                              ./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-1200.jpg 1200w"
-                      sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
-              <img src="./assets/images/tvd-over-varying-truncation/tvd-over-varying-truncation-800.jpg"
-                  alt="Graph representing the relationship of truncation total variation distance over truncation"
-                  loading="lazy" style="width:100%;height:auto;">
-            </picture>
-            <figcaption>
-              <p> Graph showcasing a negative relationship between statistical comparison benchmark 
-              <abbr title="Total Variation Distance">TVD</abbr> over a truncation range of 7–12. </p> 
-              <p> Graph data was constructed and analyzed by Jesus Azpitarte using Python. </p>
-            </figcaption>
-          </figure>
-
-          </li>
-          <li>  
-            <h4> Working in a Team</h4>
-            <p> For this research project, everyone was assigned to a different section of the program. This made it difficult to deal with the inputs and outputs of everyone's code. Documentation and communication was pivotal to account for that chasm. I learned that starting early with documentation is essential for maintaining project longevity.</p>
-            <p> Before this project, I was mostly a solitary worker but being in such a reliable and helpful team absolutely blasted me out of my shell. When people rely on me in a team base enviornment, it pushes me to acheive my goals and ensure quality is maintained. </p>
-
-            <figure id="conference-poster">
-              <picture>
-                <source type="image/webp"
-                        srcset="./assets/images/conference-poster/conference-poster-400.webp 400w,
-                                ./assets/images/conference-poster/conference-poster-800.webp 800w,
-                                ./assets/images/conference-poster/conference-poster-1200.webp 1200w"
-                        sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
-                <source type="image/jpeg"
-                        srcset="./assets/images/conference-poster/conference-poster-400.jpg 400w,
-                                ./assets/images/conference-poster/conference-poster-800.jpg 800w,
-                                ./assets/images/conference-poster/conference-poster-1200.jpg 1200w"
-                        sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw">
-                <img src="./assets/images/conference-poster/conference-poster-800.jpg"
-                    alt="Group portrait of Jesus Azpitarte with fellow undergraduate researchers standing in front of their quantum computing conference poster."
-                    loading="lazy" style="width:100%;height:auto;">
-              </picture>
-
-              <figcaption>
-                <p>
-                  Group photo of all Jesus&#39; research mates at 
-                  <abbr>ERSP</abbr> (Early Research Scholars Program) &#39;s annual research symposium.
-                </p>
-              </figcaption>
-            </figure>
-          
-          </li>
-          <li>  
-            <h4> Literature Review</h4>
-            <p> Although I had a previous interest in skimming the Quantum Physics side of Youtube, I had absolutely no experience with the vastly mathematical field of Quantum Computing. To obtain even a franction of understanding, I conducted a literature review surrounding the Random Circuit Sampling topic. It was common for me to stumble on every other word in an article's sentence, but the effort was well worth it. Ensuring the literature I consumed intersected with my research question saved me lots of time and effort. </p>
-          </li>
-        </ol>
-      </project-snapshot>
-    </article>
-
+          </projects>
+        </projects>
+      </article>
     </main>
-     
-    <hr> 
+
+
+    <template id="project-card-template">
+      <style>
+        :host {
+          display: flex;
+          flex-direction: column;
+          background-color: var(--background-color);
+          border-radius: var(--border-round-small);
+          border: 1px solid var(--accent-color);
+          width: clamp(300px, 30%, 400px);
+          padding: var(--space-m) !important; 
+          box-sizing: border-box;
+          height: 100;
+        }
+
+        picture, img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1;
+          display: block;
+          margin-bottom: var(--space-m);
+          border-radius: var(--border-round-small);
+        }
+        
+        h2 {
+          margin: 0;
+        }
+        ::slotted([slot="title"]) {
+          font-size: var(--step-0);
+          margin: 0 0 var(--space-m) 0;
+        }
+        ::slotted([slot="description"]) {
+          line-height: 1.6;
+          margin: 0 0 var(--space-m) 0;
+        }
+        ::slotted([slot="link"]) {
+          color: var(--accent-color) !important;
+        }
+
+      </style>
+
+      <picture id="picture">
+        <img id="image" src="../assets/svg/no-image-svgrepo-com.svg" alt="No image available">
+      </picture>
+      <h2><slot name="title">untitled</slot></h2>
+      <p><b> Description: </b><slot name="description">description not found.</slot></p>
+      <slot name="link"><a id="readmore" href="#">Explore Project &rarr;</a></slot>
+    </template>
+
     <footer>
       <small> &copy; 2025 Jesus Azpitarte. Licensed under 
         <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
@@ -187,6 +155,9 @@
         </a>. Viewing only.
       </small>
     </footer>
+
   </body>
+  <script src="./components/project-card.js"> </script>
   <script src="./assets/js/main.js"> </script>
 </html>
+

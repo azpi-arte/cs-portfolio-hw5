@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Frontend WebDev – Splagen</title>
+    <meta name="description" content="Frontend web development experience on a MERN + TypeScript agile team for Splagen.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/images/favicon_io/favicon.ico" type="image/x-icon">
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+      #portfolio-page {
+        img {
+          display: block;
+          margin: var(--space-m) auto;
+          width: 80%;
+          height: auto;
+        }
+        .tech-list li { display:inline; }
+        .tech-list li:not(:last-child)::after { content:"|"; }
+        p { text-indent: var(--space-xs); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <svg id="logo" width="40" height="40" viewBox="0 0 20 20">
+          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+        </svg>
+
+        <nav-links>
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About Me</a>
+          <a href="../portfolio.html">Portfolio</a>
+          <a href="../contact.html">Contact</a>
+        </nav-links>
+
+        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">Settings</button>
+
+        <dialog id="settings-dialog">
+          <settings-content>
+            <span><input type="checkbox" id="dark-mode"><label>Dark Mode</label></span>
+            <button command="close" commandfor="settings-dialog">Close Settings</button>
+          </settings-content>
+        </dialog>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="hamburger">&#9776;</label>
+
+        <aside id="side-nav">
+          <label for="menu-toggle" id="close">&#10005;</label>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About Me</a></li>
+            <li><a href="../portfolio.html">Portfolio</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
+
+    <main>
+      <article id="portfolio-page">
+        <project-snapshot id="splagen">
+          <h1>Frontend Development – Splagen Nonprofit</h1>
+
+          <h3>Description</h3>
+          <p>Contributed to Splagen’s platform by implementing frontend features within a MERN ecosystem, enhancing UI workflows, and improving user engagement for nonprofit-facing tools.</p>
+
+          <h3>Role</h3>
+          <p>Built TypeScript-driven components, integrated REST endpoints, and collaborated with backend engineers to refine data-heavy views used by volunteers and project coordinators.</p>
+
+          <ul class="tech-list">
+            <h3>Tech Utilized</h3>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>MongoDB</li>
+            <li>Agile/Scrum</li>
+          </ul>
+
+          <ol class="challenges">
+            <h3>Challenges</h3>
+
+            <li>
+              <h4>Component Architecture</h4>
+              <p>Created modular and scalable UI components for dashboards and form flows, ensuring predictable state management and alignment with team standards.</p>
+            </li>
+
+            <li>
+              <h4>API Integration</h4>
+              <p>Connected React views to Splagen’s backend, handling validation, error states, and loading patterns to streamline user workflows.</p>
+            </li>
+
+            <li>
+              <h4>Agile Collaboration</h4>
+              <p>Participated in two-week sprints, coordinated through stand-ups and backlog reviews, and supported teammates by maintaining clear documentation.</p>
+            </li>
+
+            <li>
+              <h4>Accessibility & UI Polish</h4>
+              <p>Incorporated accessible markup patterns and refined layouts to accommodate Splagen’s diverse volunteer base.</p>
+            </li>
+          </ol>
+        </project-snapshot>
+      </article>
+    </main>
+
+    <footer>
+      <small>&copy; 2025 Jesus Azpitarte. Licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
+          CC BY-NC-ND 4.0
+        </a>. Viewing only.
+      </small>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,44 +1,15 @@
-@import url("./main.css");
-
 #portfolio-page {
-  img {
-    display: block;
-    margin: var(--space-m) auto;
-    width: 80%;
-    height: auto;
-  }
+  margin: auto;
 
-  #man-svg {
-    width: 50%;
-  }
-
-  .tech-list {
-    li {
-      display: inline;
-    }
-  }
-
-  .tech-list li:not(:last-child)::after {
-    content: "|";
-  }
-
-  p {
-    text-indent: var(--space-xs);
-  }
-  
-  #brickwork-2d-rcs {
-    display: block;
-    margin: var(--space-l) auto;
-    width: clamp(200px, 50vw, 800px);
-  }
-
-  #brickwork-2d-rcs img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  figcaption p{
-    font-size: var(--step--1)
+  h1 {
+    font-size: var(--step-2);
   }
 }
+
+projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-m);
+}
+

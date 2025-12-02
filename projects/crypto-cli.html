@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Cybersecurity QE CLI </title>
+    <meta name="description" content="Page describing a mock ServiceNow Cybersecurity Quality Engineering CLI.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/images/favicon_io/favicon.ico" type="image/x-icon">
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+      #portfolio-page {
+        img {
+          display: block;
+          margin: var(--space-m) auto;
+          width: 80%;
+          height: auto;
+        }
+        .tech-list li {
+          display: inline;
+        }
+        .tech-list li:not(:last-child)::after {
+          content: "|";
+        }
+        p {
+          text-indent: var(--space-xs);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <svg id="logo" width="40" height="40" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+        </svg>
+
+        <nav-links>
+          <a href="../index.html"> Home </a>
+          <a href="../about.html"> About </a>
+          <a href="../portfolio.html"> Portfolio </a>
+          <a href="../contact.html"> Contact </a>
+        </nav-links>
+
+        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
+          Settings
+        </button>
+
+        <dialog id="settings-dialog">
+          <settings-content>
+            <span><input type="checkbox" id="dark-mode"> <label>Dark Mode</label></span>
+            <button command="close" commandfor="settings-dialog"> Close </button>
+          </settings-content>
+        </dialog>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="hamburger">&#9776;</label>
+
+        <aside id="side-nav">
+          <label for="menu-toggle" id="close">&#10005;</label>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../portfolio.html">Portfolio</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
+
+    <main>
+      <article id="portfolio-page">
+        <project-snapshot id="sn-cyber-cli">
+          <h1> ServiceNow Cybersecurity QE Automation CLI </h1>
+
+          <h3> Description </h3>
+          <p>
+            Prototype command-line utility intended to streamline quality checks across
+            cybersecurity workflows. Built for orchestrating automated scans, validating
+            configuration drift, and exporting structured reports.
+          </p>
+
+          <h3> Role </h3>
+          <p>
+            Designed conceptual command structure, mock pipeline stages, and reporting
+            templates for simulated integration with ServiceNow Security Operations.
+          </p>
+
+          <ul class="tech-list">
+            <h3> Tech Utilized </h3>
+            <li> Node.js </li>
+            <li> Bash </li>
+            <li> JSON Schemas </li>
+            <li> Mock API Stubs </li>
+          </ul>
+
+          <ol class="challenges">
+            <h3> Challenges </h3>
+
+            <li>
+              <h4> Designing Workflow Automation </h4>
+              <p>
+                The CLI blueprint needed reusable modules for triggering synthetic tests,
+                verifying results, and chaining follow-up tasks. A staged runner model was
+                drafted to simulate how auditors might queue logic against security records.
+              </p>
+            </li>
+
+            <li>
+              <h4> Structuring Configuration Validation </h4>
+              <p>
+                A mock schema layer was introduced to imitate drift detection. The structure
+                allowed the CLI to “compare” known-good definitions with scanned outputs and
+                format discrepancies into a standardized diff view.
+              </p>
+            </li>
+
+            <li>
+              <h4> Simulating Reporting Features </h4>
+              <p>
+                A faux reporting engine produced markdown summaries containing severity
+                breakdowns and mock remediation hints. This was useful for demonstrating how
+                the tool could integrate with ticketing flows.
+              </p>
+            </li>
+
+            <li>
+              <h4> Coordinating Task Flow </h4>
+              <p>
+                A lightweight task graph outlined how different checks passed context to the
+                next stage. Even without real APIs, this made it possible to visualize a
+                full QE automation pipeline.
+              </p>
+            </li>
+          </ol>
+        </project-snapshot>
+      </article>
+    </main>
+
+    <footer>
+      <small> &copy; 2025. Viewing only. </small>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

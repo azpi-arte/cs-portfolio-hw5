@@ -88,7 +88,6 @@
   hr {
     margin: var(--space-m) 0;
     border: 0;
-
   }
 }
 
@@ -106,7 +105,7 @@
     src: url(../fonts/Varela/Varela-Regular.ttf) format('truetype')
   }
 
-  * {
+  *:not(:host) {
     font-family: "Varela", Arial, sans-serif;
   }
 
@@ -194,7 +193,7 @@
   }
 
   button:focus {
-    outline: 3px solid var(--);
+    outline: 3px solid var(--background-tertiary);
     outline-offset: 5px;
   }
 
@@ -273,8 +272,8 @@
     padding: var(--space-2xs);
     width: 100%;
     box-shadow:
-    0px 3px 20px rgb(0,0,0,0.2),
-    0px 10px 30px  rgb(0,0,0,0.1);
+    0px 3px 20px rgb(0,0,0,0.0),
+    0px 10px 30px  rgb(0,0,0,0.01);
 
     nav-links a {
       padding: 0 clamp(4px, 50vw ,var(--space-2xs));

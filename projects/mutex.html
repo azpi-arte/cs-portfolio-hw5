@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OS Synchronization – UCSD CSE120</title>
+    <meta name="description" content="User-level threading, semaphores, and synchronization for UCSD CSE120 (Pasquale).">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/images/favicon_io/favicon.ico" type="image/x-icon">
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+      #portfolio-page {
+        img {
+          display: block;
+          margin: var(--space-m) auto;
+          width: 80%;
+          height: auto;
+        }
+        .tech-list li { display:inline; }
+        .tech-list li:not(:last-child)::after { content:"|"; }
+        p { text-indent: var(--space-xs); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <svg id="logo" width="40" height="40" viewBox="0 0 20 20">
+          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+        </svg>
+
+        <nav-links>
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About Me</a>
+          <a href="../portfolio.html">Portfolio</a>
+          <a href="../contact.html">Contact</a>
+        </nav-links>
+
+        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">Settings</button>
+
+        <dialog id="settings-dialog">
+          <settings-content>
+            <span><input type="checkbox" id="dark-mode"><label>Dark Mode</label></span>
+            <button command="close" commandfor="settings-dialog">Close Settings</button>
+          </settings-content>
+        </dialog>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="hamburger">&#9776;</label>
+
+        <aside id="side-nav">
+          <label for="menu-toggle" id="close">&#10005;</label>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About Me</a></li>
+            <li><a href="../portfolio.html">Portfolio</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
+
+    <main>
+      <article id="portfolio-page">
+        <project-snapshot id="cse120-semaphores">
+          <h1>User-Level Threads & Synchronization – UCSD CSE120</h1>
+
+          <h3>Description</h3>
+          <p>Implemented a full user-level threading system for an operating systems course, covering context switching, cooperative scheduling, mutual exclusion, and semaphore-based synchronization. The work centered around extending a constrained starter kernel and producing a complete threading runtime in C.</p>
+
+          <h3>Role</h3>
+          <p>Developed the thread manager, per-thread stacks, FIFO scheduling, and semaphore primitives. Designed test cases to validate correctness under contention, interleavings, and edge-case yield paths.</p>
+
+          <ul class="tech-list">
+            <h3>Tech Utilized</h3>
+            <li>C</li>
+            <li>User-level threading</li>
+            <li>Context switching (setjmp/longjmp)</li>
+            <li>Semaphores</li>
+            <li>Scheduling</li>
+            <li>Low-level stack management</li>
+          </ul>
+
+          <ol class="challenges">
+            <h3>Challenges</h3>
+
+            <li>
+              <h4>Context Control</h4>
+              <p>Used setjmp/longjmp to implement manual context switching while maintaining valid call stacks and activation records across thread boundaries.</p>
+            </li>
+
+            <li>
+              <h4>Stack Layout</h4>
+              <p>Constructed isolated stacks for each thread without dynamic allocation, using fixed-size buffers and careful placement of frame-dependent parameters.</p>
+            </li>
+
+            <li>
+              <h4>Thread Lifecycle</h4>
+              <p>Generalized thread creation and teardown beyond the two-thread scaffold, supporting reuse of IDs and maintaining a FIFO ready queue.</p>
+            </li>
+
+            <li>
+              <h4>Yield Semantics</h4>
+              <p>Implemented yields between arbitrary threads with correct return propagation, enabling cooperative multitasking and reproducible control transfer.</p>
+            </li>
+
+            <li>
+              <h4>Semaphores & Mutual Exclusion</h4>
+              <p>Built semaphore operations atop the scheduler to block, queue, and wake threads while guaranteeing atomicity in critical sections.</p>
+            </li>
+          </ol>
+        </project-snapshot>
+      </article>
+    </main>
+
+    <footer>
+      <small>&copy; 2025 Jesus Azpitarte. Licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
+          CC BY-NC-ND 4.0
+        </a>. Viewing only.
+      </small>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

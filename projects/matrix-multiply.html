@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Portfolio: CSE160 PA8 OpenGL Assignment </title>
+    <meta name="description" content="Learning outcomes and challenges for OpenGL graphics programming assignment (PA8).">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../assets/images/favicon_io/favicon.ico" type="image/x-icon">
+    <meta name="view-transition" content="same-origin">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <style>
+      #portfolio-page {
+        img {
+          display: block;
+          margin: var(--space-m) auto;
+          width: 80%;
+          height: auto;
+        }
+        .tech-list {
+          li {
+            display: inline;
+          }
+        }
+        .tech-list li:not(:last-child)::after {
+          content: "|";
+        }
+        p {
+          text-indent: var(--space-xs);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      <p> This website requires javascript enabled for full functionality. </p>
+    </noscript>
+
+    <header>
+      <nav>
+        <svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
+          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
+        </svg>
+
+        <nav-links>
+          <a href="../index.html"> Home </a>
+          <a href="../about.html"> About Me </a>
+          <a href="../portfolio.html"> Portfolio </a>
+          <a href="../contact.html"> Contact </a>
+        </nav-links>
+
+        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
+          Settings
+        </button>
+
+        <dialog id="settings-dialog">
+          <settings-content>
+            <span> <input type="checkbox" id="dark-mode"> <label> Dark Mode </label> </span>
+            <button command="close" commandfor="settings-dialog"> Close Settings </button>
+          </settings-content>
+        </dialog>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" id="hamburger"> &#9776; </label>
+        <aside id="side-nav">
+          <label for="menu-toggle" id="close">&#10005;</label>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </aside>
+      </nav>
+    </header>
+
+    <main>
+      <article id="portfolio-page">
+        <project-snapshot id="cse160-pa8">
+          <h1>OpenGL Graphics Programming (CSE 160 PA8)</h1>
+
+          <h3>Description</h3>
+          <p>
+            This assignment involved developing interactive graphics programs using OpenGL, focusing on 2D/3D rendering, transformation algorithms, and data visualization. The goal was to apply core computer graphics concepts and demonstrate competency in rendering primitives, implementing custom transformations, and managing animation.[web:5]
+          </p>
+
+          <ul class="tech-list">
+            <h3>Tech Utilized</h3>
+            <li>OpenGL</li>
+            <li>C++</li>
+            <li>GLUT</li>
+            <li>Matrix Mathematics</li>
+          </ul>
+
+          <ol class="challenges">
+            <h3>Challenges</h3>
+            <li>
+              <h4>Understanding OpenGL Pipeline</h4>
+              <p>
+                Setting up and using the OpenGL pipeline was challenging due to the need to learn low-level graphics concepts, especially about shaders, buffers, and coordinate systems.[web:8]
+              </p>
+            </li>
+            <li>
+              <h4>Implementing Transformations</h4>
+              <p>
+                Developing and debugging transformation algorithms (translation, scaling, rotation) required a precise grasp of matrix manipulations. Ensuring correct visual output highlighted the importance of matrix order, homogeneous coordinates, and axis conventions.[web:5][web:8]
+              </p>
+            </li>
+            <li>
+              <h4>Interactive Animation and Input</h4>
+              <p>
+                Adding interactivity and animation to rendered graphics introduced complexity, particularly with event handling, frame updates, and synchronizing input devices. Synchronizing scene updates and managing smooth redraws was a nontrivial task.
+              </p>
+            </li>
+            <li>
+              <h4>Debugging Visual Output</h4>
+              <p>
+                Visual issues such as unexpected clipping, artifacts, or incorrect coloring required systematic debugging—often by analyzing intermediate draw calls and inspecting matrix/vector states.[web:8]
+              </p>
+            </li>
+            <li>
+              <h4>Integrating with Existing Codebases</h4>
+              <p>
+                Integrating custom code with provided scaffolding and handling unfamiliar code organization sometimes resulted in mismatched interfaces or build errors. Careful reading of sample code and documentation was essential.
+              </p>
+            </li>
+          </ol>
+
+          <h3>Learning Outcomes</h3>
+          <ul>
+            <li>Gained hands-on experience in implementing and debugging OpenGL programs.[web:5]</li>
+            <li>Learned to design and render geometric shapes and scenes using graphics primitives.[web:8]</li>
+            <li>Developed proficiency with transformation matrices and their application in 2D/3D space.</li>
+            <li>Practiced interactive programming, event-driven input handling, and animation techniques.</li>
+            <li>Improved problem-solving skills by systematically analyzing and resolving graphical issues.</li>
+          </ul>
+        </project-snapshot>
+      </article>
+    </main>
+
+    <footer>
+      <small> &copy; 2025. Licensed under
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
+          CC BY-NC-ND 4.0
+        </a>. Viewing only.
+      </small>
+    </footer>
+    <script src="../assets/js/main.js"> </script>
+  </body>
+</html>
