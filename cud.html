@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Jesus Portfolio Home </title>
-    <meta name="description" content="Home page of Jesus Azpitarte's CS Portfolio Site. ">
+    <title> Page Title </title>
+    <meta name="description" content="Page description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="view-transition" content="same-origin">
-    <link rel="icon" href="./assets/images/favicon_io/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="icon" href="./assets/images/favicon_io/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/about-me.css">
+    <script src="./assets/js/main.js"></script>
   </head>
 
-  <body id="home-body">
+  <body id="page-body">
+    <noscript>
+      <p> This website requires javascript enabled for full functionality. </p>
+    </noscript>
+
     <header>
       <nav>
         <svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -31,23 +34,18 @@
         </nav-links>
 
         <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
-          Settings 
+          Settings
         </button>
 
         <dialog id="settings-dialog">
           <settings-content>
             <span> <input type="checkbox" id="dark-mode"> <label> Dark Mode </label> </span>
-            <button command="close" commandfor="settings-dialog"> Close Settings </button>  
-            <noscript>
-              <p style="color: red; font-size: 0.9rem;">
-                Dark mode toggle will not be remembered because JavaScript is disabled.
-              </p>
-            </noscript>
+            <button command="close" commandfor="settings-dialog"> Close Settings </button>
           </settings-content>
         </dialog>
 
         <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" id="hamburger"> &#9776; </label>
+        <label for="menu-toggle" id="hamburger">&#9776;</label>
 
         <aside id="side-nav">
           <label for="menu-toggle" id="close">&#10005;</label>
@@ -62,27 +60,33 @@
     </header>
 
     <main>
-      <article id="home">
-        <hero-section>
-          <hero-blurb>
-            <span> Yo, I'm </span>
-            <span> Jesus Azpitarte. </span>
-            <span> Software | Quality </span>
-            <span> Engineer. </span>
-            <br>
+      <!-- CUD Form -->
+      <form id="card-form">
+        <h1> <abr> CUD </abr> Card form </h1>
+        <label for="title-input" >Title</label>
+        <input name="title" type="text" id="title-input" list="local-card-titles" minlength="1" maxlength="100" required>
 
-            <div>
-              <a href="./portfolio.html"> <button> View Projects</button> </a>
-              <button class="secondary-button"> Download Resume </button>
-            </div>
-          </hero-blurb>
+        <label for="image-input" >Image URL/Name</label>
+        <input name="image-name" type="url" id="image-input" maxlength="500" required>
+        <aside> Accepts URLs and pre-processed image names </aside>
 
-          <orbit-glow> </orbit-glow>
-        </hero-section>
-      </article>
+        <label for="description-input" >Description</label>
+        <textarea name="description" type="text" id="description-input" rows="4" minlength="1" maxlength="1000" required></textarea>
+
+        <label for="link-input"> Reading Link URL </label>
+        <input name="link" type="url" id="link-input" maxlength="500" required>
+
+        <crud-buttons>
+          <button type="submit" id="post-card-button"> POST </button>
+          <button type="submit" id="put-card-button"> PUT </button>
+          <button type="submit" id="delete-card-button"> DELETE </button> 
+        </crud-buttons>
+        
+       </form>
     </main>
-    
-    <hr> 
+
+    <hr>
+
     <footer>
       <small> &copy; 2025 Jesus Azpitarte. Licensed under 
         <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
@@ -90,6 +94,9 @@
         </a>. Viewing only.
       </small>
     </footer>
-  </body>
 
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/project-card-cud.js"></script>
+
+  </body>
 </html>

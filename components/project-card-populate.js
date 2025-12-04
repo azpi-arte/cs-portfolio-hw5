@@ -40,7 +40,7 @@ function populateRemoteCards (containerNode) {
   containerNode.innerHTML = "";
 
   cardData.forEach(c => {
-    const card = new ProjectCard({ imgName: c["image-name"], title: c["title"], description: c["description"], link: c["link"]});
+    const card = new ProjectCard({ image: c["image-name"], title: c["title"], description: c["description"], link: c["link"]});
     containerNode.appendChild(card);
   });
 }
@@ -61,7 +61,7 @@ function populateLocalCards(containerNode) {
   containerNode.innerHTML = "";
   
   cards.forEach(c => {
-    const card = new ProjectCard({ imgName: c["image-name"], title: c["title"], description: c["description"], link: c["link"]});
+    const card = new ProjectCard({ image: c["image-name"], title: c["title"], description: c["description"], link: c["link"]});
     containerNode.appendChild(card);
   });
 }

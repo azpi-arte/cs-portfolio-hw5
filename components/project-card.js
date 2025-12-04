@@ -1,42 +1,74 @@
 class ProjectCard extends HTMLElement {
-  constructor({ imgName, title, description, link } = {}) {
+  constructor({ image, title, description, link } = {}) {
     super();
     const template = document.getElementById('project-card-template').content;
     this.attachShadow({ mode: 'open' }).appendChild(template.cloneNode(true));
 
-    // Store optional data internally
-    if (imgName) this.setAttribute('image', imgName);
+    if (image) this.setAttribute('image', image);
     if (title) this._title = title;
     if (description) this._description = description;
     if (link) this._link = link;
   }
 
-  connectedCallback() {
-    const imageName = this.getAttribute('image');
+  async connectedCallback() {
+    const imageAttr = this.getAttribute('image');
     const title = this._title || this.getAttribute('title') || 'untitled';
     const pictureEl = this.shadowRoot.getElementById('picture');
     const imgEl = this.shadowRoot.getElementById('image');
+    const defaultImg = '../assets/svg/no-image-svgrepo-com.svg';
 
-    // --- Image setup ---
-    if (imageName) {
-      pictureEl.querySelectorAll('source').forEach(s => s.remove());
+    const isUrl = /^(https?:)?\/\//i;
 
-      const sourceWebp = document.createElement('source');
-      sourceWebp.type = 'image/webp';
-      sourceWebp.srcset = `./assets/images/${imageName}/${imageName}-800w.webp 2x`;
-      pictureEl.prepend(sourceWebp);
+    const checkExists = async (path) => {
+      try {
+        const res = await fetch(path, { method: 'HEAD' });
+        return res.ok;
+      } catch {
+        return false;
+      }
+    };
 
-      const sourceJpg = document.createElement('source');
-      sourceJpg.type = 'image/jpeg';
-      sourceJpg.srcset = `./assets/images/${imageName}/${imageName}-800w.jpg 2x`;
-      pictureEl.prepend(sourceJpg);
+    const buildImgPath = (name, file) =>
+      `./assets/images/${name}/${name}-${file}`;
 
-      imgEl.src = `./assets/images/${imageName}/${imageName}-800w.jpg`;
-      imgEl.alt = `${title} image`;
-    } else {
-      imgEl.src = '../assets/svg/no-image-svgrepo-com.svg';
-      imgEl.alt = 'No image available';
+    let finalSrc = defaultImg;
+    let webpSrc = null;
+    let jpgSrc = null;
+
+    if (imageAttr) {
+      if (isUrl.test(imageAttr)) {
+        // treat as a URL
+        finalSrc = imageAttr;
+      } else {
+        // treat as a local image name
+        const baseJpg = buildImgPath(imageAttr, '800w.jpg');
+        const baseWebp = buildImgPath(imageAttr, '800w.webp');
+        const exists = await checkExists(baseJpg);
+
+        if (exists) {
+          finalSrc = baseJpg;
+          webpSrc = `${baseWebp} 2x`;
+          jpgSrc = `${baseJpg} 2x`;
+        }
+      }
     }
+
+    pictureEl.querySelectorAll('source').forEach(s => s.remove());
+
+    if (webpSrc && jpgSrc) {
+      const sWebp = document.createElement('source');
+      sWebp.type = 'image/webp';
+      sWebp.srcset = webpSrc;
+      pictureEl.prepend(sWebp);
+
+      const sJpg = document.createElement('source');
+      sJpg.type = 'image/jpeg';
+      sJpg.srcset = jpgSrc;
+      pictureEl.prepend(sJpg);
+    }
+
+    imgEl.src = finalSrc;
+    imgEl.alt = `${title} image`;
 
     // --- Title slot ---
     if (!this.querySelector('[slot="title"]') && title) {
@@ -66,7 +98,3 @@ class ProjectCard extends HTMLElement {
 }
 
 customElements.define('project-card', ProjectCard);
-
-
-
-

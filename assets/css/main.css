@@ -390,3 +390,107 @@ nav {
   view-transition-name: navbar;
   view-transition-group: none;
 }
+
+@import url("./main.css");
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: auto;
+  margin: 20vh auto;
+  padding: var(--space-s);
+  gap: var(--space-xs);
+  justify-self: center;
+  align-self: center;
+  border: 1px solid var(--hr-color);
+  background-color: var(--background-color);
+  background: linear-gradient(var(--background-color), var(--background-secondary));
+  border-radius: var(--border-round-med);
+
+  input {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--hr-color);
+    border-radius: var(--border-round-small);
+    height: var(--space-m);
+    padding: 0.5rem;
+  }
+
+  textarea {
+    border: 1px solid var(--hr-color);
+    border-radius: var(--border-round-small);
+    height: 10%;
+    padding: 0.5rem;
+    resize: none;
+  }
+
+  output-area {
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  form-element {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xs);
+
+    input:user-invalid {
+      border: 2px solid var(--error-color);
+      border-spacing: 2px;
+    }
+
+    input:user-invalid:focus {
+      box-shadow: inset 0 0 0 1px var(--error-color);
+    }
+
+    textarea:invalid {
+      box-shadow: inset 0 0 0 2px var(--error-color);
+    }
+  }
+
+  form-element:has(input:optional) label::after {
+    content: " (optional)";
+  }
+
+  #error-output {
+    color: var(--error-color);
+  }
+
+  h1 {
+    font-size: var(--step-3);
+    margin: auto;
+  }
+
+  aside {
+    color: var(--hr-color);
+    margin-top: -.5rem;
+  }
+
+  textarea {
+    background-color: var(--background-secondary);
+  }
+}
+
+form button[type="submit"] {
+  margin: var(--space-2xs) 0;
+}
+
+/* flashing input */
+.flashing-input {
+  border-color: var(--hr-color);
+  animation: flash-border 0.1s alternate 3, shake 0.5s ease-in-out 1;
+}
+
+@keyframes flash-border {
+  from { border-color: red; }
+  to { border-color: var(--hr-color); }
+}
+
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-5px); }
+  50%  { transform: translateX(5px); }
+  75%  { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
