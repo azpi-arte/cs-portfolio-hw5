@@ -34,7 +34,7 @@ function requestProjectCards () {
  *
  * @param {HTMLElement} containerNode - The DOM element that will hold the project cards.
  */
-function populateProjectCards (containerNode) {
+function populateRemoteCards (containerNode) {
   let cardData = requestProjectCards();
 
   containerNode.innerHTML = "";
@@ -46,7 +46,29 @@ function populateProjectCards (containerNode) {
 }
 
 function onLoadRemoteClick() {
-  populateProjectCards(projectContainer)
+  populateRemoteCards(projectContainer)
 }
 
 loadRemoteButton.addEventListener("click", onLoadRemoteClick);
+
+/* ------------------------- Local Storage Cards: --------------------------- */
+const loadLocalButton = document.getElementById("load-local");
+
+/* get local cards*/
+function populateLocalCards(containerNode) {
+  const cards = JSON.parse(localStorage.getItem("azpi-cards") || "[]");
+
+  containerNode.innerHTML = "";
+  
+  cards.forEach(c => {
+    const card = new ProjectCard({ imgName: c["image-name"], title: c["title"], description: c["description"], link: c["link"]});
+    containerNode.appendChild(card);
+  });
+}
+
+/* call populatelocalCards function */
+function onLoadLocalClick() {
+  (populateLocalCards(projectContainer))
+}
+
+loadLocalButton.addEventListener("click", onLoadLocalClick)
