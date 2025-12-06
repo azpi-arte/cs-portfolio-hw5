@@ -10,6 +10,8 @@
     <meta name="view-transition" content="same-origin">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/portfolio.css">
+    <script src="./components/header.js"></script>
+    <script src="./components/custom-footer.js"></script>
   </head>
 
   <body id="portfolio-body">
@@ -17,47 +19,7 @@
       <p> This website requires javascript enabled for full functionality. </p>
     </noscript>
 
-    <header>
-      <nav>
-        <svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
-          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
-          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
-          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
-        </svg>
-
-        <nav-links>
-          <a href="index.html"> Home </a>
-          <a href="about.html"> About Me </a>
-          <a href="portfolio.html"> Portfolio </a>
-          <a href="contact.html"> Contact </a>
-        </nav-links>
-
-        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
-          Settings 
-        </button>
-
-        <dialog id="settings-dialog">
-          <settings-content>
-            <span> <input type="checkbox" id="dark-mode"> <label> Dark Mode </label> </span>
-            <button command="close" commandfor="settings-dialog"> Close Settings </button>  
-          </settings-content>
-        </dialog>
-
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" id="hamburger"> &#9776; </label>
-
-        <aside id="side-nav">
-          <label for="menu-toggle" id="close">&#10005;</label>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </aside>
-      </nav>
-    </header>
+    <nav-bar></nav-bar>
 
     <main>
       <article id="portfolio-page">
@@ -129,19 +91,11 @@
       <slot name="link" ><a id="readmore" href="#">Explore Project &rarr;</a></slot>
     </template>
 
-    <footer>
-      <small> &copy; 2025 Jesus Azpitarte. Licensed under 
-        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
-          CC&nbsp;BY-NC-ND&nbsp;4.0
-        </a>. Viewing only.
-      </small>
-    </footer>
-
+    <custom-footer></custom-footer>
   </body>
   <script src="./components/project-card.js"> </script>
   <script src="./assets/js/main.js"> </script>
   <script src="./assets/js/load-defaults.js"> </script>
   <script src="./components/project-card-populate.js" type="module"> </script>
-
 </html>
 

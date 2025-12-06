@@ -11,55 +11,12 @@
     <link rel="icon" href="./assets/images/favicon_io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/home.css">
+    <script src="components/header.js"> </script>
+    <script src="components/custom-footer.js"> </script>
   </head>
 
   <body id="home-body">
-    <header>
-      <nav>
-        <svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
-          <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
-          <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"/>
-          <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"/>
-        </svg>
-
-        <nav-links>
-          <a href="index.html"> Home </a>
-          <a href="about.html"> About Me </a>
-          <a href="portfolio.html"> Portfolio </a>
-          <a href="contact.html"> Contact </a>
-        </nav-links>
-
-        <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog">
-          Settings 
-        </button>
-
-        <dialog id="settings-dialog">
-          <settings-content>
-            <span> <input type="checkbox" id="dark-mode"> <label> Dark Mode </label> </span>
-            <button command="close" commandfor="settings-dialog"> Close Settings </button>  
-            <noscript>
-              <p style="color: red; font-size: 0.9rem;">
-                Dark mode toggle will not be remembered because JavaScript is disabled.
-              </p>
-            </noscript>
-          </settings-content>
-        </dialog>
-
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" id="hamburger"> &#9776; </label>
-
-        <aside id="side-nav">
-          <label for="menu-toggle" id="close">&#10005;</label>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </aside>
-      </nav>
-    </header>
+    <nav-bar></nav-bar>
 
     <main>
       <article id="home">
@@ -70,7 +27,6 @@
             <span> Software | Quality </span>
             <span> Engineer. </span>
             <br>
-
             <div>
               <a href="./portfolio.html"> <button> View Projects</button> </a>
               <a download href="./assets/documents/JesusAzpitarteResume.pdf">
@@ -78,20 +34,11 @@
               </a>
             </div>
           </hero-blurb>
-          
+        
           <orbit-glow> <core> </core> </orbit-glow>
         </hero-section>
       </article>
     </main>
-    
-    <hr> 
-    <footer>
-      <small> &copy; 2025 Jesus Azpitarte. Licensed under 
-        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener noreferrer">
-          CC&nbsp;BY-NC-ND&nbsp;4.0
-        </a>. Viewing only.
-      </small>
-    </footer>
+    <custom-footer> </custom-footer>
   </body>
-
 </html>

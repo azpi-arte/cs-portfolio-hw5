@@ -69,8 +69,7 @@ main {
       core::after {
         content: "";
       }
-    }
-
+    }    
   }
 }
 
@@ -93,5 +92,38 @@ main {
   100% {
     opacity: 100%;
   }
-  
+
+}
+
+circle {
+  --length: 40vw;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: var(--length);
+  height: var(--length);
+  background-color: red;
+  background: linear-gradient(var(--accent-color),var(--background-secondary));
+  clip-path: circle();
+  animation: spin linear 2s infinite;
+  position: absolute; 
+  left: clamp(-60%, calc(var(--length) * -0.5), 80%); 
+  top: calc(50% - var(--length)/2);
+  z-index: -1;
+
+  div {
+    background-color: var(--background-secondary);
+    width: calc(0.98 * var(--length));
+    height: 35vw;
+    clip-path: circle();
+  }
+}
+
+#right-circle {
+  --length: 40vw;
+  left: auto;
+  right: calc(var(--length) * -0.5); 
+  animation: spin linear 2s infinite reverse;
+  background: linear-gradient(var(--primary-color),var(--background-secondary));
+
 }

@@ -1,0 +1,6 @@
+<svg id="logo" width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"></circle>
+        <circle cx="6.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"></circle>
+        <circle cx="13.5" cy="10" r="4" stroke="currentColor" fill="none" stroke-width="0.5"></circle>
+        <circle cx="13.5" cy="10" r="2.5" stroke="currentColor" fill="none" stroke-width="0.5"></circle>
+      </svg>
