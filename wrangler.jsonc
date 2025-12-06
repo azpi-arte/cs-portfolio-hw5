@@ -1,5 +1,7 @@
 {
   "name": "worker-name",
   "compatibility_date": "2025-12-06",
-  "main": "index.html"
+  "assets": {
+    "directory": "./"
+  }
 }
