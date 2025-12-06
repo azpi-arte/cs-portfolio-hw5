@@ -189,6 +189,8 @@
 
   /* button*/
   button {
+    justify-content: center;
+    align-items: center;
     background: var(--accent-color);
     color: white;
     padding: 10px 15px;

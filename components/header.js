@@ -18,20 +18,38 @@ class Navbar extends HTMLElement {
           0px 10px 30px rgb(0,0,0,0.01);
         view-transition-name: navbar;
         view-transition-group: none;
+
+        img {
+          filter: brightness(0.8);
+        }
       }
 
       nav > * {
         margin: 0 var(--space-xs);
-      }
+        }
 
-      /* logo */
-      #logo {
+        /* logo */
+        #logo {
         color: var(--logo-color);
       }
 
+      @media (max-width: 600px) {
+        nav #settings-button:not(img), #logo {
+          display:none;
+        }
+        
+        nav-links {
+          font-size: 1rem;
+        }
+      }
+
       /* nav-links */
+      nav-links {
+        display: flex;
+        gap: 1rem;
+      }
+
       nav-links a {
-        padding: 0 clamp(4px, 50vw, var(--space-2xs));
         color: var(--text-color);
         text-decoration: none;
       }
@@ -42,6 +60,7 @@ class Navbar extends HTMLElement {
         text-decoration-color: var(--primary-color);
         text-underline-offset: 5px;
       }
+
 
       /* hamburger menu & toggle (hidden by default) */
       #hamburger,
@@ -103,6 +122,9 @@ class Navbar extends HTMLElement {
       }
 
       #settings-button {
+        display: flex;
+        gap: 0.2rem;
+        justify-content: center;
         margin: 0 var(--space-xs);
       }
 
@@ -158,7 +180,7 @@ class Navbar extends HTMLElement {
     </style>
   
     <nav>
-      <a href="./index/html"> <img src="assets/svg/infiniti.svg" alt=""> </a>
+      <a href="./index/html"> <img src="assets/svg/infiniti.svg" alt="" id="logo"> </a>
       
       <nav-links>
         <a href="index.html"> Home </a>
@@ -168,7 +190,7 @@ class Navbar extends HTMLElement {
       </nav-links>
 
       <button aria-label="Open settings" command="show-modal" commandfor="settings-dialog" id="settings-button">
-        Settings 
+        Settings <img src="./assets/svg/settings-svgrepo-com.svg" width="20px" alt=""> 
       </button>
 
       <dialog id="settings-dialog">
